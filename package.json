@@ -8,13 +8,14 @@
     "dev": "npm-run-all --parallel dev:react dev:electron",
     "dev:react": "vite",
     "dev:electron": "pnpm run transpile:electron && cross-env NODE_ENV=development electron .",
-    "build": "tsc -b && vite build",
+    "build:react": "tsc -b && vite build",
+    "transpile:electron": "tsc --project src/electron/tsconfig.json",
+    "build": "pnpm run build:react && pnpm run transpile:electron",
     "lint": "eslint .",
     "preview": "vite preview",
-    "transpile:electron": "tsc --project src/electron/tsconfig.json",
-    "dist:mac": "pnpm run transpile:electron && pnpm run build && electron-builder --mac --arm64",
-    "dist:linux": "pnpm run transpile:electron && pnpm run build && electron-builder --linux --x64",
-    "dist:win": "pnpm run transpile:electron && pnpm run build && electron-builder --win --x64"
+    "dist:mac": "pnpm run build && electron-builder --mac --arm64",
+    "dist:linux": "pnpm run build && electron-builder --linux --x64",
+    "dist:win": "pnpm run build && electron-builder --win --x64"
   },
   "dependencies": {
     "react": "^19.0.0",

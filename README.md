@@ -1,51 +1,55 @@
-# React + TypeScript + Vite
+# 📌 Boilerplate de electron com react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  Uma estrutura pronta para desenvolver aplicativos desktop com React e Electron. Já vem configurada com as melhores práticas de segurança, garantindo uma comunicação segura entre o back-end (processo principal do Electron) e o front-end (React).
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Electron
 
-## Expanding the ESLint configuration
+- React
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- PNPM (estou usando pnpm mas sinta-se a vontade para utilizar o gerenciador de pacotes que prefere)
 
-- Configure the top-level `parserOptions` property like this:
+- TypeScript
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📂 Estrutura do Projeto
+
+Após a compilação, o projeto gera as seguintes pastas:
+
+ - `src` - Contém o código-fonte do projeto.
+    - `assets` - Contém arquivos estáticos e recursos.
+    - `electron` - Contém a lógica do Electron.
+    - `ui` - Contém a interface do usuário em React.
+
+## ⚡ Como Rodar o Projeto
+
+### 1️⃣ Instalar Dependências
+
+Antes de rodar o projeto, certifique-se de instalar todas as dependências necessárias:
+
+```
+pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2️⃣ Construir o Projeto
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Após instalar as dependências, é necessário construir o projeto para gerar os arquivos necessários:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
-# modelo-electron-com-react
+pnpm run build
+```
+
+Isso criará as pastas dist-react/ e dist-electron/.
+
+### 3️⃣ Rodar o Projeto
+
+Agora, basta iniciar o projeto em modo de desenvolvimento:
+
+```
+pnpm run dev
+```
+
+## 🛠️ Requisitos
+
+- Node.js instalado
+- PNPM instalado
