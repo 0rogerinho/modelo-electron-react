@@ -49,6 +49,24 @@ Agora, basta iniciar o projeto em modo de desenvolvimento:
 pnpm run dev
 ```
 
+## 🏗️ Como gerar executável para windows/linux/mac
+
+### 🖥️ Executável para windows
+ ```
+pnpm run dist:win
+ ```
+
+ ### 📦 Executável para linux
+ ```
+pnpm run dist:linux
+ ```
+
+ ### ⚙️ Executável para mac
+ ```
+pnpm run dist:mac
+ ```
+
+
 ## 🛠️ Requisitos
 
 - Node.js instalado
